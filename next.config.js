@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   distDir: 'out',
+  reactStrictMode: true,
   images: {
     unoptimized: true,
     domains: [
@@ -34,12 +35,19 @@ const nextConfig = {
     ],
   },
   typescript: {
-    // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
-    // !! WARN !!
     ignoreBuildErrors: true,
   },
-};
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  experimental: {
+    // Defaults to true in Next.js 14.1.0 and newer
+    esmExternals: true,
+  },
+}
 
 module.exports = nextConfig;

@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { usePathname } from "next/navigation"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { usePathname } from "next/navigation";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { SiteHeader } from "@/components/layout/site-header";
 
 interface NavLink {
   title: string;
@@ -17,9 +18,15 @@ interface NavSection {
   links: NavLink[];
 }
 
-// Create our own sidebar component similar to DocsSidebarNav
-function GuidesSidebar({ className, links }: { className?: string, links: NavSection[] }) {
-  const pathname = usePathname()
+// Sidebar component
+function GuidesSidebar({
+  className,
+  links,
+}: {
+  className?: string;
+  links: NavSection[];
+}) {
+  const pathname = usePathname();
 
   return (
     <ScrollArea className="h-full py-6">
@@ -51,81 +58,82 @@ function GuidesSidebar({ className, links }: { className?: string, links: NavSec
         ))}
       </div>
     </ScrollArea>
-  )
+  );
 }
 
 export default function GuidesLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
-    <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-      <GuidesSidebar
-        className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block"
-        links={[
-          {
-            title: "Getting Started",
-            links: [
-              {
-                title: "Introduction",
-                href: "/guides",
-                isActivePath: pathname === "/guides",
-              },
-              {
-                title: "Setup Guide",
-                href: "/guides/setup",
-                isActivePath: pathname === "/guides/setup",
-              },
-            ],
-          },
-          {
-            title: "Implementation",
-            links: [
-              {
-                title: "Mobile Money Integration",
-                href: "/guides/mobile-money",
-                isActivePath: pathname === "/guides/mobile-money",
-              },
-              {
-                title: "Card Payments",
-                href: "/guides/card-payments",
-                isActivePath: pathname === "/guides/card-payments",
-              },
-              {
-                title: "QR Code Payments",
-                href: "/guides/qr-code",
-                isActivePath: pathname === "/guides/qr-code",
-              },
-            ],
-          },
-          {
-            title: "Advanced Topics",
-            links: [
-              {
-                title: "Security Best Practices",
-                href: "/guides/security",
-                isActivePath: pathname === "/guides/security",
-              },
-              {
-                title: "Webhooks Setup",
-                href: "/guides/webhooks",
-                isActivePath: pathname === "/guides/webhooks",
-              },
-              {
-                title: "Testing",
-                href: "/guides/testing",
-                isActivePath: pathname === "/guides/testing",
-              },
-            ],
-          },
-        ]}
-      />
-      <main className="relative py-6 lg:gap-10 lg:py-8">
-        {children}
-      </main>
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+        <GuidesSidebar
+          className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block"
+          links={[
+            {
+              title: "Getting Started",
+              links: [
+                {
+                  title: "Introduction",
+                  href: "/guides",
+                  isActivePath: pathname === "/guides",
+                },
+                {
+                  title: "Setup Guide",
+                  href: "/guides/setup",
+                  isActivePath: pathname === "/guides/setup",
+                },
+              ],
+            },
+            {
+              title: "Implementation",
+              links: [
+                {
+                  title: "Mobile Money Integration",
+                  href: "/guides/mobile-money",
+                  isActivePath: pathname === "/guides/mobile-money",
+                },
+                {
+                  title: "Card Payments",
+                  href: "/guides/card-payments",
+                  isActivePath: pathname === "/guides/card-payments",
+                },
+                {
+                  title: "QR Code Payments",
+                  href: "/guides/qr-code",
+                  isActivePath: pathname === "/guides/qr-code",
+                },
+              ],
+            },
+            {
+              title: "Advanced Topics",
+              links: [
+                {
+                  title: "Security Best Practices",
+                  href: "/guides/security",
+                  isActivePath: pathname === "/guides/security",
+                },
+                {
+                  title: "Webhooks Setup",
+                  href: "/guides/webhooks",
+                  isActivePath: pathname === "/guides/webhooks",
+                },
+                {
+                  title: "Testing",
+                  href: "/guides/testing",
+                  isActivePath: pathname === "/guides/testing",
+                },
+              ],
+            },
+          ]}
+        />
+        <main className="relative py-6 lg:gap-10 lg:py-8">{children}</main>
+      </div>
     </div>
-  )
+  );
 }
