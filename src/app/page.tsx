@@ -1,8 +1,22 @@
-import Link from "next/link"
-import { SiteHeader } from "@/components/layout/site-header"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, BookOpen, CreditCard, FileText, Landmark, Lock } from "lucide-react"
+import Link from "next/link";
+import { SiteHeader } from "@/components/layout/site-header";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  ArrowRight,
+  BookOpen,
+  CreditCard,
+  FileText,
+  Landmark,
+  Lock,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -17,12 +31,15 @@ export default function Home() {
                   EcobankPay API Documentation
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Complete documentation for integrating EcobankPay payment gateway with your applications
+                  Complete documentation for integrating EcobankPay payment
+                  gateway with your applications
                 </p>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link href="/docs">Get Started <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link href="/docs">
+                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href="/guides">Integration Guides</Link>
@@ -38,9 +55,12 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center gap-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Features</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Features
+                </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Discover the powerful capabilities of the EcobankPay payment gateway
+                  Discover the powerful capabilities of the EcobankPay payment
+                  gateway
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 mx-auto max-w-6xl">
@@ -53,7 +73,8 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Process payments from MTN Mobile Money, AirtelTigo Money, Vodafone Cash, VISA and MasterCard.
+                      Process payments from MTN Mobile Money, AirtelTigo Money,
+                      Vodafone Cash, VISA and MasterCard.
                     </p>
                   </CardContent>
                 </Card>
@@ -66,7 +87,8 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      All transactions are secured with HMAC SHA-256 hashing and secure key management.
+                      All transactions are secured with HMAC SHA-256 hashing and
+                      secure key management.
                     </p>
                   </CardContent>
                 </Card>
@@ -79,7 +101,8 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Comprehensive documentation with code examples and integration guides.
+                      Comprehensive documentation with code examples and
+                      integration guides.
                     </p>
                   </CardContent>
                 </Card>
@@ -92,7 +115,8 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Real-time payment notifications via webhooks and callback URLs.
+                      Real-time payment notifications via webhooks and callback
+                      URLs.
                     </p>
                   </CardContent>
                 </Card>
@@ -109,5 +133,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
