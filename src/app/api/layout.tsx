@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { SiteHeader } from "@/components/layout/site-header"
-import { DocsSidebarNav } from "@/components/layout/sidebar"
+import { SiteHeader } from "@/components/layout/site-header";
+import { DocsSidebarNav } from "@/components/layout/sidebar";
 
 interface ApiLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function ApiLayout({ children }: ApiLayoutProps) {
@@ -13,12 +13,10 @@ export default function ApiLayout({ children }: ApiLayoutProps) {
       <SiteHeader />
       <div className="container flex-1">
         <div className="flex flex-col gap-4 md:flex-row">
-          <aside className="w-full md:w-64 shrink-0 border-r md:sticky md:top-16 md:h-[calc(100vh-4rem)]">
+          <aside className="w-full md:w-64 shrink-0 border-r sticky top-14 h-screen overflow-hidden">
             <DocsSidebarNav />
           </aside>
-          <main className="flex-1 py-6 md:py-8 lg:py-10">
-            {children}
-          </main>
+          <main className="flex-1 py-6 md:py-8 lg:py-10">{children}</main>
         </div>
       </div>
       <footer className="border-t py-6 md:py-0">
@@ -29,5 +27,5 @@ export default function ApiLayout({ children }: ApiLayoutProps) {
         </div>
       </footer>
     </div>
-  )
+  );
 }

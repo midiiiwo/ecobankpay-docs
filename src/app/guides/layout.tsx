@@ -17,8 +17,6 @@ interface NavSection {
   title: string;
   links: NavLink[];
 }
-
-// Sidebar component
 function GuidesSidebar({
   className,
   links,
@@ -29,35 +27,35 @@ function GuidesSidebar({
   const pathname = usePathname();
 
   return (
-    <ScrollArea className="h-full py-6">
-      <div className={cn("w-full", className)}>
-        {links.map((section, index) => (
-          <div key={index} className="pb-4">
-            <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
-              {section.title}
-            </h4>
-            {section.links && section.links.length > 0 ? (
-              <div className="grid grid-flow-row auto-rows-max text-sm">
-                {section.links.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
-                      item.isActivePath
-                        ? "font-medium text-foreground bg-accent"
-                        : "text-muted-foreground"
-                    )}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </div>
-            ) : null}
-          </div>
-        ))}
-      </div>
-    </ScrollArea>
+    <div
+      className={cn("w-full h-screen sticky top-14 overflow-hidden", className)}
+    >
+      {links.map((section, index) => (
+        <div key={index} className="pb-4">
+          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
+            {section.title}
+          </h4>
+          {section.links && section.links.length > 0 ? (
+            <div className="grid grid-flow-row auto-rows-max text-sm">
+              {section.links.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
+                    item.isActivePath
+                      ? "font-medium text-foreground bg-accent"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      ))}
+    </div>
   );
 }
 

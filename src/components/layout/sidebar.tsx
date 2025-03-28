@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { cn } from "@/lib/utils"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { cn } from "@/lib/utils";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const sidebarNavItems = [
   {
@@ -13,13 +13,13 @@ const sidebarNavItems = [
     items: [
       {
         title: "Introduction",
-        href: "/docs"
+        href: "/docs",
       },
       {
         title: "Prerequisites",
-        href: "/docs/prerequisites"
-      }
-    ]
+        href: "/docs/prerequisites",
+      },
+    ],
   },
   {
     title: "Integration",
@@ -27,13 +27,13 @@ const sidebarNavItems = [
     items: [
       {
         title: "Gateway Overview",
-        href: "/docs/integration"
+        href: "/docs/integration",
       },
       {
         title: "Payment Flow",
-        href: "/docs/integration/payment-flow"
-      }
-    ]
+        href: "/docs/integration/payment-flow",
+      },
+    ],
   },
   {
     title: "API Reference",
@@ -41,21 +41,21 @@ const sidebarNavItems = [
     items: [
       {
         title: "Request Parameters",
-        href: "/api/request"
+        href: "/api/request",
       },
       {
         title: "Response Codes",
-        href: "/api/response"
+        href: "/api/response",
       },
       {
         title: "Webhooks",
-        href: "/api/webhook"
+        href: "/api/webhook",
       },
       {
         title: "Error Codes",
-        href: "/api/error-codes"
-      }
-    ]
+        href: "/api/error-codes",
+      },
+    ],
   },
   {
     title: "Sample Code",
@@ -63,25 +63,27 @@ const sidebarNavItems = [
     items: [
       {
         title: "Request Example",
-        href: "/docs/sample-code/request"
+        href: "/docs/sample-code/request",
       },
       {
         title: "Response Example",
-        href: "/docs/sample-code/response"
-      }
-    ]
-  }
-]
+        href: "/docs/sample-code/response",
+      },
+    ],
+  },
+];
 
 interface DocsSidebarNavProps {
-  className?: string
+  className?: string;
 }
 
 export function DocsSidebarNav({ className }: DocsSidebarNavProps) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
-    <ScrollArea className="h-full py-6">
+    <div
+      className={cn("w-full h-screen sticky top-14 overflow-hidden", className)}
+    >
       <div className={cn("w-full", className)}>
         {sidebarNavItems.map((section) => (
           <div key={section.href} className="pb-4">
@@ -109,6 +111,6 @@ export function DocsSidebarNav({ className }: DocsSidebarNavProps) {
           </div>
         ))}
       </div>
-    </ScrollArea>
-  )
+    </div>
+  );
 }
