@@ -2,7 +2,7 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/layout/site-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, CreditCard, FileText, Landmark, Lock } from "lucide-react"
+import { ArrowRight, BookOpen, CreditCard, FileText, Landmark, Lock } from "lucide-react"
 
 export default function Home() {
   return (
@@ -23,6 +23,9 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Button asChild size="lg">
                   <Link href="/docs">Get Started <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/guides">Integration Guides</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href="/api">API Reference</Link>
