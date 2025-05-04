@@ -1,13 +1,20 @@
-import { Metadata } from "next"
-import Link from "next/link"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { InfoIcon } from "lucide-react"
+import { Metadata } from "next";
+import Link from "next/link";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { InfoIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "EcobankPay Integration Guides",
-  description: "Step-by-step guides for integrating EcobankPay payment solutions",
-}
+  description:
+    "Step-by-step guides for integrating EcobankPay payment solutions",
+};
 
 export default function GuidesPage() {
   return (
@@ -17,7 +24,8 @@ export default function GuidesPage() {
           Integration Guides
         </h1>
         <p className="text-lg text-muted-foreground">
-          Step-by-step tutorials for implementing EcobankPay in your applications
+          Step-by-step tutorials for implementing EcobankPay in your
+          applications
         </p>
       </div>
 
@@ -25,7 +33,8 @@ export default function GuidesPage() {
         <InfoIcon className="h-4 w-4" />
         <AlertTitle>Practical Implementation Examples</AlertTitle>
         <AlertDescription>
-          These guides provide practical, code-focused examples to help you implement EcobankPay for various payment methods and use cases.
+          These guides provide practical, code-focused examples to help you
+          implement EcobankPay for various payment methods and use cases.
         </AlertDescription>
       </Alert>
 
@@ -34,10 +43,15 @@ export default function GuidesPage() {
           Overview
         </h2>
         <p className="leading-7">
-          Our integration guides are designed to provide you with clear, step-by-step instructions for implementing EcobankPay in your applications. Each guide includes code examples, recommended practices, and troubleshooting tips.
+          Our integration guides are designed to provide you with clear,
+          step-by-step instructions for implementing EcobankPay in your
+          applications. Each guide includes code examples, recommended
+          practices, and troubleshooting tips.
         </p>
         <p className="leading-7">
-          Whether you're implementing mobile money payments, card transactions, or QR code solutions, these guides will help you get up and running quickly.
+          Whether you're implementing mobile money payments, card transactions,
+          or QR code solutions, these guides will help you get up and running
+          quickly.
         </p>
       </div>
 
@@ -55,7 +69,10 @@ export default function GuidesPage() {
               <li>Testing sandbox access</li>
             </ul>
             <div className="mt-4">
-              <Link href="/guides/setup" className="text-primary text-sm hover:underline">
+              <Link
+                href="/guides/setup"
+                className="text-primary text-sm hover:underline"
+              >
                 Read the setup guide →
               </Link>
             </div>
@@ -71,11 +88,14 @@ export default function GuidesPage() {
             <ul className="list-disc pl-5 space-y-2">
               <li>MTN Mobile Money integration</li>
               <li>AirtelTigo Money workflows</li>
-              <li>Vodafone Cash implementation</li>
+              <li>Telecel Cash implementation</li>
               <li>Transaction status handling</li>
             </ul>
             <div className="mt-4">
-              <Link href="/guides/mobile-money" className="text-primary text-sm hover:underline">
+              <Link
+                href="/guides/mobile-money"
+                className="text-primary text-sm hover:underline"
+              >
                 Explore mobile money integration →
               </Link>
             </div>
@@ -95,7 +115,10 @@ export default function GuidesPage() {
               <li>Card tokenization</li>
             </ul>
             <div className="mt-4">
-              <Link href="/guides/card-payments" className="text-primary text-sm hover:underline">
+              <Link
+                href="/guides/card-payments"
+                className="text-primary text-sm hover:underline"
+              >
                 Learn card integration →
               </Link>
             </div>
@@ -115,7 +138,10 @@ export default function GuidesPage() {
               <li>Multi-currency support</li>
             </ul>
             <div className="mt-4">
-              <Link href="/guides/qr-code" className="text-primary text-sm hover:underline">
+              <Link
+                href="/guides/qr-code"
+                className="text-primary text-sm hover:underline"
+              >
                 Set up QR payments →
               </Link>
             </div>
@@ -135,7 +161,10 @@ export default function GuidesPage() {
               <li>PCI compliance best practices</li>
             </ul>
             <div className="mt-4">
-              <Link href="/guides/security" className="text-primary text-sm hover:underline">
+              <Link
+                href="/guides/security"
+                className="text-primary text-sm hover:underline"
+              >
                 Review security guidelines →
               </Link>
             </div>
@@ -155,7 +184,10 @@ export default function GuidesPage() {
               <li>Error simulation</li>
             </ul>
             <div className="mt-4">
-              <Link href="/guides/testing" className="text-primary text-sm hover:underline">
+              <Link
+                href="/guides/testing"
+                className="text-primary text-sm hover:underline"
+              >
                 View testing procedures →
               </Link>
             </div>
@@ -164,10 +196,13 @@ export default function GuidesPage() {
       </div>
 
       <div className="flex justify-end">
-        <Link href="/guides/setup" className="text-primary underline hover:text-primary/80">
+        <Link
+          href="/guides/setup"
+          className="text-primary underline hover:text-primary/80"
+        >
           Next: Setup Guide →
         </Link>
       </div>
     </div>
-  )
+  );
 }

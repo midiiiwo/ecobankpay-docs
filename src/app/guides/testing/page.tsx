@@ -1,12 +1,12 @@
-import { Metadata } from "next"
-import Link from "next/link"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { InfoIcon } from "lucide-react"
+import { Metadata } from "next";
+import Link from "next/link";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { InfoIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "EcobankPay Testing Guide",
   description: "How to test your EcobankPay payment integration",
-}
+};
 
 export default function TestingGuidePage() {
   return (
@@ -24,7 +24,9 @@ export default function TestingGuidePage() {
         <InfoIcon className="h-4 w-4" />
         <AlertTitle>Test Thoroughly Before Production</AlertTitle>
         <AlertDescription>
-          Comprehensive testing in the sandbox environment ensures a smooth transition to production and helps avoid issues with real customer transactions.
+          Comprehensive testing in the sandbox environment ensures a smooth
+          transition to production and helps avoid issues with real customer
+          transactions.
         </AlertDescription>
       </Alert>
 
@@ -33,7 +35,9 @@ export default function TestingGuidePage() {
           Overview
         </h2>
         <p className="leading-7">
-          Testing your EcobankPay integration is a critical step before accepting real payments. This guide covers the testing process, including:
+          Testing your EcobankPay integration is a critical step before
+          accepting real payments. This guide covers the testing process,
+          including:
         </p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
           <li>Setting up your sandbox environment</li>
@@ -50,7 +54,8 @@ export default function TestingGuidePage() {
         </h2>
 
         <p className="leading-7">
-          EcobankPay provides a dedicated sandbox environment for testing your integration:
+          EcobankPay provides a dedicated sandbox environment for testing your
+          integration:
         </p>
 
         <div className="my-6 overflow-y-auto">
@@ -65,12 +70,16 @@ export default function TestingGuidePage() {
             <tbody>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Sandbox</td>
-                <td className="px-4 py-2"><code>https://sandbox.ecobankpay.com/api/v1</code></td>
+                <td className="px-4 py-2">
+                  <code>https://sandbox.ecobankpay.com/api/v1</code>
+                </td>
                 <td className="px-4 py-2">Testing and development</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Production</td>
-                <td className="px-4 py-2"><code>https://api.ecobankpay.com/api/v1</code></td>
+                <td className="px-4 py-2">
+                  <code>https://api.ecobankpay.com/api/v1</code>
+                </td>
                 <td className="px-4 py-2">Live transactions</td>
               </tr>
             </tbody>
@@ -80,19 +89,25 @@ export default function TestingGuidePage() {
         <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
           Obtaining Sandbox Credentials
         </h3>
-        <p className="leading-7">
-          To access the sandbox environment:
-        </p>
+        <p className="leading-7">To access the sandbox environment:</p>
         <ol className="my-6 ml-6 list-decimal [&>li]:mt-2">
-          <li>Contact EcobankPay support at <code>support@ecobankpay.com</code> to request sandbox access</li>
+          <li>
+            Contact EcobankPay support at <code>support@ecobankpay.com</code> to
+            request sandbox access
+          </li>
           <li>You will receive a Sandbox Merchant Key and Secret</li>
-          <li>These credentials are different from your production credentials</li>
+          <li>
+            These credentials are different from your production credentials
+          </li>
           <li>Use these sandbox credentials for all your testing</li>
         </ol>
 
         <div className="bg-muted p-4 rounded-md my-4">
           <p className="font-medium">Important:</p>
-          <p className="text-sm mt-2">Never use production credentials in your development or testing environments, and never use sandbox credentials in production.</p>
+          <p className="text-sm mt-2">
+            Never use production credentials in your development or testing
+            environments, and never use sandbox credentials in production.
+          </p>
         </div>
       </div>
 
@@ -112,39 +127,57 @@ export default function TestingGuidePage() {
             <thead>
               <tr className="bg-muted">
                 <th className="px-4 py-2 text-left font-medium">Provider</th>
-                <th className="px-4 py-2 text-left font-medium">Test Phone Numbers</th>
-                <th className="px-4 py-2 text-left font-medium">Simulated Result</th>
+                <th className="px-4 py-2 text-left font-medium">
+                  Test Phone Numbers
+                </th>
+                <th className="px-4 py-2 text-left font-medium">
+                  Simulated Result
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">MTN Mobile Money</td>
-                <td className="px-4 py-2"><code>+233200000001</code></td>
+                <td className="px-4 py-2">
+                  <code>+233200000001</code>
+                </td>
                 <td className="px-4 py-2">Successful payment</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">MTN Mobile Money</td>
-                <td className="px-4 py-2"><code>+233200000002</code></td>
-                <td className="px-4 py-2">Failed payment (insufficient funds)</td>
+                <td className="px-4 py-2">
+                  <code>+233200000002</code>
+                </td>
+                <td className="px-4 py-2">
+                  Failed payment (insufficient funds)
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">AirtelTigo Money</td>
-                <td className="px-4 py-2"><code>+233270000001</code></td>
+                <td className="px-4 py-2">
+                  <code>+233270000001</code>
+                </td>
                 <td className="px-4 py-2">Successful payment</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">AirtelTigo Money</td>
-                <td className="px-4 py-2"><code>+233270000002</code></td>
+                <td className="px-4 py-2">
+                  <code>+233270000002</code>
+                </td>
                 <td className="px-4 py-2">Failed payment (user cancelled)</td>
               </tr>
               <tr className="border-b">
-                <td className="px-4 py-2 font-medium">Vodafone Cash</td>
-                <td className="px-4 py-2"><code>+233500000001</code></td>
+                <td className="px-4 py-2 font-medium">Telecel Cash</td>
+                <td className="px-4 py-2">
+                  <code>+233500000001</code>
+                </td>
                 <td className="px-4 py-2">Successful payment</td>
               </tr>
               <tr className="border-b">
-                <td className="px-4 py-2 font-medium">Vodafone Cash</td>
-                <td className="px-4 py-2"><code>+233500000002</code></td>
+                <td className="px-4 py-2 font-medium">Telecel Cash</td>
+                <td className="px-4 py-2">
+                  <code>+233500000002</code>
+                </td>
                 <td className="px-4 py-2">Failed payment (timeout)</td>
               </tr>
             </tbody>
@@ -171,35 +204,45 @@ export default function TestingGuidePage() {
             <tbody>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">VISA</td>
-                <td className="px-4 py-2"><code>4111 1111 1111 1111</code></td>
+                <td className="px-4 py-2">
+                  <code>4111 1111 1111 1111</code>
+                </td>
                 <td className="px-4 py-2">Any future date</td>
                 <td className="px-4 py-2">123</td>
                 <td className="px-4 py-2">Successful</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">VISA (3DS)</td>
-                <td className="px-4 py-2"><code>4242 4242 4242 4242</code></td>
+                <td className="px-4 py-2">
+                  <code>4242 4242 4242 4242</code>
+                </td>
                 <td className="px-4 py-2">Any future date</td>
                 <td className="px-4 py-2">123</td>
                 <td className="px-4 py-2">Successful with 3DS</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">MasterCard</td>
-                <td className="px-4 py-2"><code>5555 5555 5555 4444</code></td>
+                <td className="px-4 py-2">
+                  <code>5555 5555 5555 4444</code>
+                </td>
                 <td className="px-4 py-2">Any future date</td>
                 <td className="px-4 py-2">123</td>
                 <td className="px-4 py-2">Successful</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">VISA (Declined)</td>
-                <td className="px-4 py-2"><code>4000 0000 0000 0002</code></td>
+                <td className="px-4 py-2">
+                  <code>4000 0000 0000 0002</code>
+                </td>
                 <td className="px-4 py-2">Any future date</td>
                 <td className="px-4 py-2">123</td>
                 <td className="px-4 py-2">Declined</td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">MasterCard (Declined)</td>
-                <td className="px-4 py-2"><code>5105 1051 0510 5100</code></td>
+                <td className="px-4 py-2">
+                  <code>5105 1051 0510 5100</code>
+                </td>
                 <td className="px-4 py-2">Any future date</td>
                 <td className="px-4 py-2">123</td>
                 <td className="px-4 py-2">Declined</td>
@@ -210,7 +253,11 @@ export default function TestingGuidePage() {
 
         <div className="bg-muted p-4 rounded-md my-4">
           <p className="font-medium">3D Secure Testing:</p>
-          <p className="text-sm mt-2">For cards that trigger 3D Secure in the sandbox, use any value for the authentication code. In the sandbox, 3D Secure simulations always succeed when you provide any value.</p>
+          <p className="text-sm mt-2">
+            For cards that trigger 3D Secure in the sandbox, use any value for
+            the authentication code. In the sandbox, 3D Secure simulations
+            always succeed when you provide any value.
+          </p>
         </div>
       </div>
 
@@ -247,7 +294,9 @@ export default function TestingGuidePage() {
           3. Error Scenarios
         </h3>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-          <li>Missing required parameters (e.g., merchant_key, invoice_id, total)</li>
+          <li>
+            Missing required parameters (e.g., merchant_key, invoice_id, total)
+          </li>
           <li>Invalid secure_hash verification</li>
           <li>Duplicate invoice_id handling</li>
           <li>Network timeout and retry mechanisms</li>
@@ -270,7 +319,8 @@ export default function TestingGuidePage() {
         </h2>
 
         <p className="leading-7">
-          You can simulate specific payment scenarios in the sandbox by using special values:
+          You can simulate specific payment scenarios in the sandbox by using
+          special values:
         </p>
 
         <div className="my-6 overflow-y-auto">
@@ -278,29 +328,41 @@ export default function TestingGuidePage() {
             <thead>
               <tr className="bg-muted">
                 <th className="px-4 py-2 text-left font-medium">Scenario</th>
-                <th className="px-4 py-2 text-left font-medium">How to Simulate</th>
+                <th className="px-4 py-2 text-left font-medium">
+                  How to Simulate
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Transaction Timeout</td>
-                <td className="px-4 py-2">Use an amount of exactly 0.01 in the total field</td>
+                <td className="px-4 py-2">
+                  Use an amount of exactly 0.01 in the total field
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Network Error</td>
-                <td className="px-4 py-2">Use an amount of exactly 0.02 in the total field</td>
+                <td className="px-4 py-2">
+                  Use an amount of exactly 0.02 in the total field
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Insufficient Funds</td>
-                <td className="px-4 py-2">Use an amount of exactly 0.03 in the total field</td>
+                <td className="px-4 py-2">
+                  Use an amount of exactly 0.03 in the total field
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Customer Cancellation</td>
-                <td className="px-4 py-2">Use an amount of exactly 0.04 in the total field</td>
+                <td className="px-4 py-2">
+                  Use an amount of exactly 0.04 in the total field
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Delayed Processing</td>
-                <td className="px-4 py-2">Use an amount of exactly 0.05 in the total field</td>
+                <td className="px-4 py-2">
+                  Use an amount of exactly 0.05 in the total field
+                </td>
               </tr>
             </tbody>
           </table>
@@ -313,7 +375,8 @@ export default function TestingGuidePage() {
         </h2>
 
         <p className="leading-7">
-          Before going live, verify that your integration meets these requirements:
+          Before going live, verify that your integration meets these
+          requirements:
         </p>
 
         <div className="my-6 overflow-y-auto">
@@ -321,45 +384,66 @@ export default function TestingGuidePage() {
             <thead>
               <tr className="bg-muted">
                 <th className="px-4 py-2 text-left font-medium">Category</th>
-                <th className="px-4 py-2 text-left font-medium">Verification Item</th>
+                <th className="px-4 py-2 text-left font-medium">
+                  Verification Item
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Authentication</td>
-                <td className="px-4 py-2">Secure hash implementation works correctly</td>
+                <td className="px-4 py-2">
+                  Secure hash implementation works correctly
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Payment Flow</td>
-                <td className="px-4 py-2">All supported payment methods can be initiated successfully</td>
+                <td className="px-4 py-2">
+                  All supported payment methods can be initiated successfully
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Notifications</td>
-                <td className="px-4 py-2">IPN webhook endpoint receives and processes notifications</td>
+                <td className="px-4 py-2">
+                  IPN webhook endpoint receives and processes notifications
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Status Checks</td>
-                <td className="px-4 py-2">Payment status verification is implemented correctly</td>
+                <td className="px-4 py-2">
+                  Payment status verification is implemented correctly
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Error Handling</td>
-                <td className="px-4 py-2">Application handles failed payments gracefully</td>
+                <td className="px-4 py-2">
+                  Application handles failed payments gracefully
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Idempotency</td>
-                <td className="px-4 py-2">System prevents duplicate order processing</td>
+                <td className="px-4 py-2">
+                  System prevents duplicate order processing
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">UI/UX</td>
-                <td className="px-4 py-2">User interface clearly communicates payment status</td>
+                <td className="px-4 py-2">
+                  User interface clearly communicates payment status
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Security</td>
-                <td className="px-4 py-2">Merchant credentials are stored securely (not in source code)</td>
+                <td className="px-4 py-2">
+                  Merchant credentials are stored securely (not in source code)
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">Environment</td>
-                <td className="px-4 py-2">Code to switch between sandbox and production environments exists</td>
+                <td className="px-4 py-2">
+                  Code to switch between sandbox and production environments
+                  exists
+                </td>
               </tr>
             </tbody>
           </table>
@@ -377,42 +461,59 @@ export default function TestingGuidePage() {
 
         <ol className="my-6 ml-6 list-decimal [&>li]:mt-2">
           <li>
-            <strong>Complete all testing:</strong> Ensure all test scenarios pass in the sandbox environment
+            <strong>Complete all testing:</strong> Ensure all test scenarios
+            pass in the sandbox environment
           </li>
           <li>
-            <strong>Request production credentials:</strong> Contact EcobankPay support to obtain production credentials
+            <strong>Request production credentials:</strong> Contact EcobankPay
+            support to obtain production credentials
           </li>
           <li>
-            <strong>Update configuration:</strong> Change API endpoints and credentials to production values
+            <strong>Update configuration:</strong> Change API endpoints and
+            credentials to production values
           </li>
           <li>
-            <strong>Implement logging:</strong> Ensure comprehensive logging is in place for troubleshooting
+            <strong>Implement logging:</strong> Ensure comprehensive logging is
+            in place for troubleshooting
           </li>
           <li>
-            <strong>Set up monitoring:</strong> Implement alerts for payment failures or abnormal patterns
+            <strong>Set up monitoring:</strong> Implement alerts for payment
+            failures or abnormal patterns
           </li>
           <li>
-            <strong>Perform a test transaction:</strong> Make a small real payment to verify the production setup
+            <strong>Perform a test transaction:</strong> Make a small real
+            payment to verify the production setup
           </li>
           <li>
-            <strong>Document the process:</strong> Create internal documentation for handling payment issues
+            <strong>Document the process:</strong> Create internal documentation
+            for handling payment issues
           </li>
         </ol>
 
         <div className="bg-muted p-4 rounded-md my-4">
           <p className="font-medium">Production Support:</p>
-          <p className="text-sm mt-2">Once live, EcobankPay's support team can be reached at <code>support@ecobankpay.com</code> or by phone at +233 XX XXX XXXX for urgent issues.</p>
+          <p className="text-sm mt-2">
+            Once live, EcobankPay's support team can be reached at{" "}
+            <code>support@ecobankpay.com</code> or by phone at +233 XX XXX XXXX
+            for urgent issues.
+          </p>
         </div>
       </div>
 
       <div className="flex justify-between mt-10">
-        <Link href="/guides/webhooks" className="text-primary underline hover:text-primary/80">
+        <Link
+          href="/guides/webhooks"
+          className="text-primary underline hover:text-primary/80"
+        >
           ← Webhooks Setup
         </Link>
-        <Link href="/guides" className="text-primary underline hover:text-primary/80">
+        <Link
+          href="/guides"
+          className="text-primary underline hover:text-primary/80"
+        >
           Back to Guides →
         </Link>
       </div>
     </div>
-  )
+  );
 }

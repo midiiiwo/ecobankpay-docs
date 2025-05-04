@@ -74,7 +74,7 @@ export default function Home() {
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
                       Process payments from MTN Mobile Money, AirtelTigo Money,
-                      Vodafone Cash, VISA and MasterCard.
+                      Telecel Cash, VISA and MasterCard.
                     </p>
                   </CardContent>
                 </Card>

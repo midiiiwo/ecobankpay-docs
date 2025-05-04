@@ -1,12 +1,12 @@
-import { Metadata } from "next"
-import Link from "next/link"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { InfoIcon } from "lucide-react"
+import { Metadata } from "next";
+import Link from "next/link";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { InfoIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "EcobankPay Mobile Money Integration",
   description: "Integrate mobile money payment methods with EcobankPay",
-}
+};
 
 export default function MobileMoneyGuidePage() {
   return (
@@ -24,7 +24,8 @@ export default function MobileMoneyGuidePage() {
         <InfoIcon className="h-4 w-4" />
         <AlertTitle>Supported Mobile Money Providers</AlertTitle>
         <AlertDescription>
-          EcobankPay supports MTN Mobile Money, AirtelTigo Money, and Vodafone Cash across multiple African markets.
+          EcobankPay supports MTN Mobile Money, AirtelTigo Money, and Telecel
+          Cash across multiple African markets.
         </AlertDescription>
       </Alert>
 
@@ -33,7 +34,9 @@ export default function MobileMoneyGuidePage() {
           Overview
         </h2>
         <p className="leading-7">
-          Mobile money integration with EcobankPay allows your customers to pay using their mobile wallets. The integration follows these general steps:
+          Mobile money integration with EcobankPay allows your customers to pay
+          using their mobile wallets. The integration follows these general
+          steps:
         </p>
         <ol className="my-6 ml-6 list-decimal [&>li]:mt-2">
           <li>Initialize a payment request to EcobankPay</li>
@@ -53,7 +56,8 @@ export default function MobileMoneyGuidePage() {
           1. Initiate Payment Request
         </h3>
         <p className="leading-7">
-          To start a mobile money payment, send a POST request to the EcobankPay mobile agents endpoint:
+          To start a mobile money payment, send a POST request to the EcobankPay
+          mobile agents endpoint:
         </p>
         <div className="my-4 p-4 bg-muted rounded-md">
           <code>POST https://pgw.paywithonline.com/v1/mobile_agents_v2</code>
@@ -80,22 +84,31 @@ export default function MobileMoneyGuidePage() {
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">invoice_id</td>
                 <td className="px-4 py-2">Y</td>
-                <td className="px-4 py-2">Your internally generated transaction invoice ID (unique, max 25 chars)</td>
+                <td className="px-4 py-2">
+                  Your internally generated transaction invoice ID (unique, max
+                  25 chars)
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">total</td>
                 <td className="px-4 py-2">Y</td>
-                <td className="px-4 py-2">The total payment amount for the transaction</td>
+                <td className="px-4 py-2">
+                  The total payment amount for the transaction
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">success_url</td>
                 <td className="px-4 py-2">N</td>
-                <td className="px-4 py-2">URL to redirect customer after successful payment</td>
+                <td className="px-4 py-2">
+                  URL to redirect customer after successful payment
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">cancelled_url</td>
                 <td className="px-4 py-2">N</td>
-                <td className="px-4 py-2">URL to redirect customer if payment is cancelled</td>
+                <td className="px-4 py-2">
+                  URL to redirect customer if payment is cancelled
+                </td>
               </tr>
             </tbody>
           </table>
@@ -117,12 +130,16 @@ export default function MobileMoneyGuidePage() {
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">number</td>
                 <td className="px-4 py-2">N</td>
-                <td className="px-4 py-2">Customer's phone number (for SMS notifications)</td>
+                <td className="px-4 py-2">
+                  Customer's phone number (for SMS notifications)
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">email</td>
                 <td className="px-4 py-2">N</td>
-                <td className="px-4 py-2">Customer's email address (for email notifications)</td>
+                <td className="px-4 py-2">
+                  Customer's email address (for email notifications)
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">name</td>
@@ -132,12 +149,16 @@ export default function MobileMoneyGuidePage() {
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">description</td>
                 <td className="px-4 py-2">N</td>
-                <td className="px-4 py-2">Description of the payment or order details</td>
+                <td className="px-4 py-2">
+                  Description of the payment or order details
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">ipn_url</td>
                 <td className="px-4 py-2">N</td>
-                <td className="px-4 py-2">URL for instant payment notifications</td>
+                <td className="px-4 py-2">
+                  URL for instant payment notifications
+                </td>
               </tr>
             </tbody>
           </table>
@@ -171,7 +192,8 @@ Content-Type: application/json
           3. Response Handling
         </h3>
         <p className="leading-7">
-          Upon successful submission, you'll receive a JSON response with payment details:
+          Upon successful submission, you'll receive a JSON response with
+          payment details:
         </p>
         <div className="my-4 p-4 bg-muted rounded-md overflow-auto">
           <pre>{`{
@@ -185,46 +207,69 @@ Content-Type: application/json
 }`}</pre>
         </div>
 
-        <p className="leading-7">
-          The key parameters in the response:
-        </p>
+        <p className="leading-7">The key parameters in the response:</p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-          <li><strong>checkout_url:</strong> URL to redirect the customer to complete payment</li>
-          <li><strong>tx_reference:</strong> EcobankPay's unique transaction reference</li>
-          <li><strong>status:</strong> Initial transaction status (success indicates request accepted)</li>
+          <li>
+            <strong>checkout_url:</strong> URL to redirect the customer to
+            complete payment
+          </li>
+          <li>
+            <strong>tx_reference:</strong> EcobankPay's unique transaction
+            reference
+          </li>
+          <li>
+            <strong>status:</strong> Initial transaction status (success
+            indicates request accepted)
+          </li>
         </ul>
 
         <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
           4. Redirect the Customer
         </h3>
         <p className="leading-7">
-          Redirect your customer to the <code>checkout_url</code> provided in the response. This page will display payment instructions and options for the customer.
+          Redirect your customer to the <code>checkout_url</code> provided in
+          the response. This page will display payment instructions and options
+          for the customer.
         </p>
 
         <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
           5. Payment Notification Handling
         </h3>
         <p className="leading-7">
-          EcobankPay will notify your application about payment status in two ways:
+          EcobankPay will notify your application about payment status in two
+          ways:
         </p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-          <li>Redirect to your <code>success_url</code> or <code>cancelled_url</code> based on payment outcome</li>
-          <li>POST request to your <code>ipn_url</code> with payment details (if provided)</li>
+          <li>
+            Redirect to your <code>success_url</code> or{" "}
+            <code>cancelled_url</code> based on payment outcome
+          </li>
+          <li>
+            POST request to your <code>ipn_url</code> with payment details (if
+            provided)
+          </li>
         </ul>
 
         <div className="bg-muted p-4 rounded-md my-4">
           <p className="font-medium">Important:</p>
-          <p className="text-sm">The IPN notification does not confirm payment. Always verify payment status using the status check endpoint.</p>
+          <p className="text-sm">
+            The IPN notification does not confirm payment. Always verify payment
+            status using the status check endpoint.
+          </p>
         </div>
 
         <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
           6. Verify Payment Status
         </h3>
         <p className="leading-7">
-          To verify the payment status, make a GET request to the transaction status endpoint:
+          To verify the payment status, make a GET request to the transaction
+          status endpoint:
         </p>
         <div className="my-4 p-4 bg-muted rounded-md">
-          <code>GET https://pgw.paywithonline.com/v1/gateway/json_status_chk?invoice_id=INV12345&merchant_key=YOUR_MERCHANT_KEY</code>
+          <code>
+            GET
+            https://pgw.paywithonline.com/v1/gateway/json_status_chk?invoice_id=INV12345&merchant_key=YOUR_MERCHANT_KEY
+          </code>
         </div>
 
         <p className="leading-7">
@@ -241,15 +286,26 @@ Content-Type: application/json
 }`}</pre>
         </div>
 
-        <p className="leading-7">
-          Possible status values:
-        </p>
+        <p className="leading-7">Possible status values:</p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-          <li><strong>new:</strong> Payment transaction initiated but not completed</li>
-          <li><strong>paid:</strong> Payment successfully completed</li>
-          <li><strong>cancelled:</strong> Payment cancelled by customer</li>
-          <li><strong>awaiting_payment:</strong> Payment pending, customer has not completed or cancelled</li>
-          <li><strong>failed:</strong> Transaction failed (check status_reason for details)</li>
+          <li>
+            <strong>new:</strong> Payment transaction initiated but not
+            completed
+          </li>
+          <li>
+            <strong>paid:</strong> Payment successfully completed
+          </li>
+          <li>
+            <strong>cancelled:</strong> Payment cancelled by customer
+          </li>
+          <li>
+            <strong>awaiting_payment:</strong> Payment pending, customer has not
+            completed or cancelled
+          </li>
+          <li>
+            <strong>failed:</strong> Transaction failed (check status_reason for
+            details)
+          </li>
         </ul>
       </div>
 
@@ -279,11 +335,15 @@ Content-Type: application/json
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">GW-003</td>
-                <td className="px-4 py-2">total/amount value missing or empty</td>
+                <td className="px-4 py-2">
+                  total/amount value missing or empty
+                </td>
               </tr>
               <tr className="border-b">
                 <td className="px-4 py-2 font-medium">GW-009</td>
-                <td className="px-4 py-2">Merchant is deactivated from receiving payments</td>
+                <td className="px-4 py-2">
+                  Merchant is deactivated from receiving payments
+                </td>
               </tr>
             </tbody>
           </table>
@@ -294,25 +354,38 @@ Content-Type: application/json
         <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
           Security Considerations
         </h2>
-        <p className="leading-7">
-          To ensure secure transactions:
-        </p>
+        <p className="leading-7">To ensure secure transactions:</p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-          <li>Create an HMAC SHA-256 hash of the request parameters for the secure_hash field</li>
-          <li>Always verify payment status using the status check endpoint before fulfilling orders</li>
-          <li>Store your merchant secret securely and never expose it in client-side code</li>
+          <li>
+            Create an HMAC SHA-256 hash of the request parameters for the
+            secure_hash field
+          </li>
+          <li>
+            Always verify payment status using the status check endpoint before
+            fulfilling orders
+          </li>
+          <li>
+            Store your merchant secret securely and never expose it in
+            client-side code
+          </li>
           <li>Use HTTPS for all communication with EcobankPay APIs</li>
         </ul>
       </div>
 
       <div className="flex justify-between mt-10">
-        <Link href="/guides/setup" className="text-primary underline hover:text-primary/80">
+        <Link
+          href="/guides/setup"
+          className="text-primary underline hover:text-primary/80"
+        >
           ← Setup Guide
         </Link>
-        <Link href="/guides/card-payments" className="text-primary underline hover:text-primary/80">
+        <Link
+          href="/guides/card-payments"
+          className="text-primary underline hover:text-primary/80"
+        >
           Card Payments →
         </Link>
       </div>
     </div>
-  )
+  );
 }
